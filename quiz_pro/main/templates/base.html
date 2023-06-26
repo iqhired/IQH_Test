@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{title}}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bt5/bootstrap.min.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">QUIZ APPLICATION</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse float-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+                <a class="nav-link" aria-current="page" href="/">Home</a>
+                <a class="nav-link " aria-current="page" href="{% url 'all_categories' %}">All Categories</a>
+
+                <a class="nav-link " href="{% url 'register' %}">Register</a>
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+          </div>
+        </div>
+      </nav>
+      
+    <main class="container">
+        {%  block content %}
+        {% endblock %}
+
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>
